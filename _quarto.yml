@@ -53,7 +53,7 @@ website:
         href: tutorials-pharma/tutorial4.qmd
       - text: "5 - Analysis of eukaryotic sequences"
         href: tutorials-pharma/tutorial5.qmd
-    - text: "Help"
+    - text: "Aide"
       menu:      
       - text: "Galaxy Help"
         href: help/galaxy.qmd

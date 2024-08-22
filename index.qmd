@@ -2,15 +2,13 @@
 title: "TD de Bioinformatique ESBS"
 ---
 
-# Bienvenue aux TD de Bioinformatique ESBS
-
 Vous trouverez ici tout le matériel nécessaire pour vos travaux dirigés (TD) de Bioinformatique à l'ESBS.
 
 En plus des sujets de TD, le site propose également des ressources utiles telles des guides et des liens vers des cours externes qui vous aideront à vous familiariser avec les outils et concepts dont vous aurez besoin.
 
-## Cours et Tutoriels Disponibles
+## Travaux dirigés
 
-### 1A - Introduction à la Bioinformatique (1ère Année)
+### 1A - Introduction à la Bioinformatique
 Voici les tutoriels pour les étudiants de première année. Ils couvrent les concepts fondamentaux et les outils essentiels en bioinformatique avec une introduction à l'interface en ligne de commande (CLI):
 
 - **[1 - Exploration des Bases de Données](tutorials-1A/tutorial1.qmd)**
@@ -19,7 +17,7 @@ Voici les tutoriels pour les étudiants de première année. Ils couvrent les co
 - **[4 - Analyse des familles de protéines](tutorials-1A/tutorial4.qmd)**
 - **[5 - Alignement multiple et phylogénie moléculaire](tutorials-1A/tutorial5.qmd)**
 
-### 2A - Génomique et Épigénomique (2ème Année)
+### 2A - Génomique et Épigénomique
 Les TD de Génomique et Épigénomique s'adresse aux étudiants de 2ème année. Ils vous guideront à travers plusieurs analyses très utilisés en génomique:
 
 - **[1 - Pré-traitement des lectures de séquences](tutorials-2A/tutorial1.qmd)**
@@ -28,14 +26,14 @@ Les TD de Génomique et Épigénomique s'adresse aux étudiants de 2ème année.
 - **[4 - Annotation d'un génome procaryote complet](tutorials-2A/tutorial4.qmd)**
 - **[5 - Analyse des séquences eucaryotes](tutorials-2A/tutorial5.qmd)**
 
-### 3A - Génomique Comparative et Médicale (3ème Année)
+### 3A - Génomique Comparative et Médicale
 Ces TD avancés s'adresssent aux étudiants de 3ème année :
 
 - **[2 - Profils phylogénétiques et liens fonctionnels](tutorials-3A/tutorial2.qmd)**
 - **[3 - Analyse de l'exome](tutorials-3A/tutorial3.qmd)**
 - **[4 - Génomique personnelle : variants](tutorials-3A/tutorial4.qmd)**
 
-### Pharma - Introduction à la Bioinformatique (5ème Année, Pharmacie)
+### Pharma - Introduction à la Bioinformatique
 Ces TD adressés aux 5ème année en pharmacie introduisent certains des outils et techniques de bioinformatique nécessaires en pharmaceutique:
 
 - **[1 - Pré-traitement des lectures de séquences](tutorials-pharma/tutorial1.qmd)**
@@ -44,10 +42,10 @@ Ces TD adressés aux 5ème année en pharmacie introduisent certains des outils 
 - **[4 - Recherches de similarité](tutorials-pharma/tutorial4.qmd)**
 - **[5 - Alignement multiple](tutorials-pharma/tutorial5.qmd)**
 
-## Help and Support
+## Aide et support
 
-If you need additional guidance, visit the **Help** section where you will find extra resources on the **[Galaxy platform](help/galaxy.qmd)** and using the **[command line interface (CLI)](help/cli.qmd)**, as well as links to external resources.
+Si vous avez besoin de conseils supplémentaires, visitez la section **Aide** où vous trouverez des ressources supplémentaires concernant le **[site Galaxy](help/galaxy.qmd)** et l'utilisation de la **[ligne de commande (CLI)](help/cli.qmd)**, ainsi que des liens vers des resources externes.
 
-For any questions, please feel free to contact us:
-- Odile Lecompte: odile.lecompte@unistra.fr
-- Dorine Merlat: dorine.merlat@etu.unistra.fr
+Pour toute question, n'hésitez pas à nous contacter :
+- Odile Lecompte : odile.lecompte@unistra.fr
+- Dorine Merlat : dorine.merlat@etu.unistra.fr
