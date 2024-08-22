@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Pre-processing of Sequencing Reads – ESBS Bioinformatics</title>
+<title>Prétraitement des Lectures de Séquences – ESBS Bioinformatics</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -256,19 +256,9 @@ ul.task-list li input[type="checkbox"] {
   <ul>
   <li><a href="#illumina-se" id="toc-illumina-se" class="nav-link active" data-scroll-target="#illumina-se"><span class="header-section-number">1</span> Illumina SE</a>
   <ul class="collapse">
-  <li><a href="#raw-data-fastq-file" id="toc-raw-data-fastq-file" class="nav-link" data-scroll-target="#raw-data-fastq-file"><span class="header-section-number">1.1</span> Raw data: FASTQ file</a></li>
-  <li><a href="#quality-control-using-fastq" id="toc-quality-control-using-fastq" class="nav-link" data-scroll-target="#quality-control-using-fastq"><span class="header-section-number">1.2</span> Quality control using FASTQ</a></li>
-  <li><a href="#read-processing-using-trimmomatic" id="toc-read-processing-using-trimmomatic" class="nav-link" data-scroll-target="#read-processing-using-trimmomatic"><span class="header-section-number">1.3</span> Read processing using Trimmomatic</a></li>
-  </ul></li>
-  <li><a href="#pacbio-hifi" id="toc-pacbio-hifi" class="nav-link" data-scroll-target="#pacbio-hifi"><span class="header-section-number">2</span> PacBio Hifi</a>
-  <ul class="collapse">
-  <li><a href="#import-the-file-into-galaxy" id="toc-import-the-file-into-galaxy" class="nav-link" data-scroll-target="#import-the-file-into-galaxy"><span class="header-section-number">2.1</span> Import the file into Galaxy:</a></li>
-  <li><a href="#analysis" id="toc-analysis" class="nav-link" data-scroll-target="#analysis"><span class="header-section-number">2.2</span> Analysis:</a></li>
-  </ul></li>
-  <li><a href="#nanopore" id="toc-nanopore" class="nav-link" data-scroll-target="#nanopore"><span class="header-section-number">3</span> NanoPore</a>
-  <ul class="collapse">
-  <li><a href="#import-the-files-into-galaxy" id="toc-import-the-files-into-galaxy" class="nav-link" data-scroll-target="#import-the-files-into-galaxy"><span class="header-section-number">3.1</span> Import the files into Galaxy:</a></li>
-  <li><a href="#perform-quality-control-with-pycoqc" id="toc-perform-quality-control-with-pycoqc" class="nav-link" data-scroll-target="#perform-quality-control-with-pycoqc"><span class="header-section-number">3.2</span> Perform quality control with PycoQC</a></li>
+  <li><a href="#données-brutes-fichier-fastq" id="toc-données-brutes-fichier-fastq" class="nav-link" data-scroll-target="#données-brutes-fichier-fastq"><span class="header-section-number">1.1</span> Données brutes : fichier FASTQ</a></li>
+  <li><a href="#contrôle-de-qualité-avec-fastq" id="toc-contrôle-de-qualité-avec-fastq" class="nav-link" data-scroll-target="#contrôle-de-qualité-avec-fastq"><span class="header-section-number">1.2</span> Contrôle de qualité avec FASTQ</a></li>
+  <li><a href="#traitement-des-lectures-avec-trimmomatic" id="toc-traitement-des-lectures-avec-trimmomatic" class="nav-link" data-scroll-target="#traitement-des-lectures-avec-trimmomatic"><span class="header-section-number">1.3</span> Traitement des lectures avec Trimmomatic</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -278,7 +268,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Pre-processing of Sequencing Reads</h1>
+<h1 class="title">Prétraitement des Lectures de Séquences</h1>
 </div>
 
 
@@ -295,69 +285,40 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>To practise quality control and pre-processing of raw NGS data, we will use small datasets. The tools are available in Galaxy, a platform for omics data analysis.</p>
-<p>First step: log on to https://usegalaxy.fr</p>
-<p>then, to ensure you have sufficient resources, go to the url :</p>
+<p>Pour pratiquer le contrôle de qualité et le prétraitement des données NGS brutes, nous utiliserons de petits ensembles de données. Les outils sont disponibles sur Galaxy, une plateforme pour l’analyse des données omiques.</p>
+<p>Première étape : connectez-vous sur https://usegalaxy.fr</p>
+<p>Ensuite, pour vous assurer que vous avez suffisamment de ressources, allez à l’URL :</p>
 <p>https://usegalaxy.fr/join-training/td1genomics/</p>
-<p>You can then return to galaxy.</p>
+<p>Vous pouvez ensuite revenir sur Galaxy.</p>
 <section id="illumina-se" class="level2" data-number="1">
 <h2 data-number="1" class="anchored" data-anchor-id="illumina-se"><span class="header-section-number">1</span> Illumina SE</h2>
-<p>You can rename your history (right panel).</p>
-<p>The 1st data set concerns a metagenomic study of the microbiome of the oral cavity of a snake. After extraction and fragmentation of the sample DNA, part of the 16S rRNA gene was amplified and sequenced (Illumina Single End) in order to identify the bacteria present. Due to time constraints, only part of the data will be analysed.</p>
-<section id="raw-data-fastq-file" class="level3" data-number="1.1">
-<h3 data-number="1.1" class="anchored" data-anchor-id="raw-data-fastq-file"><span class="header-section-number">1.1</span> Raw data: FASTQ file</h3>
+<p>Vous pouvez renommer votre historique (panneau droit).</p>
+<p>Le premier ensemble de données concerne une étude métagénomique du microbiome de la cavité buccale d’un serpent. Après extraction et fragmentation de l’ADN de l’échantillon, une partie du gène 16S rRNA a été amplifiée et séquencée (Illumina Single End) afin d’identifier les bactéries présentes. En raison de contraintes de temps, seule une partie des données sera analysée.</p>
+<section id="données-brutes-fichier-fastq" class="level3" data-number="1.1">
+<h3 data-number="1.1" class="anchored" data-anchor-id="données-brutes-fichier-fastq"><span class="header-section-number">1.1</span> Données brutes : fichier FASTQ</h3>
 <ol type="1">
-<li>Import the FASTQ file from the zenodo server:</li>
+<li>Importez le fichier FASTQ depuis le serveur zenodo :</li>
 </ol>
-<p>Copy the address of the link: https://zenodo.org/record/3977236/files/female_oral2.fastq-4143.gz</p>
-<p>In Galaxy, use the Upload Data button (top left) then Paste/Fetch data, copy the link and launch (start).</p>
+<p>Copiez l’adresse du lien : https://zenodo.org/record/3977236/files/female_oral2.fastq-4143.gz</p>
+<p>Dans Galaxy, utilisez le bouton Importer des données (en haut à gauche) puis Collez/Obtenez des données, collez le lien et lancez (démarrer).</p>
 <ol start="2" type="1">
-<li>Look at the file (eye icon).</li>
+<li>Examinez le fichier (icône de l’œil).</li>
 </ol>
-<p>What are the characteristics of the FASTQ format? Given that the scores are encoded using the SANGER/Illumina 1.8+ system, what is the score value for most of the bases at the start of the 1st read? Is this satisfactory?</p>
+<p>Quelles sont les caractéristiques du format FASTQ ? Étant donné que les scores sont encodés en utilisant le système SANGER/Illumina 1.8+, quelle est la valeur du score pour la plupart des bases au début de la première lecture ? Est-ce satisfaisant ?</p>
 </section>
-<section id="quality-control-using-fastq" class="level3" data-number="1.2">
-<h3 data-number="1.2" class="anchored" data-anchor-id="quality-control-using-fastq"><span class="header-section-number">1.2</span> Quality control using FASTQ</h3>
-<p>Open the FASTQ Quality Control toolbox (left panel) and choose FastQC.</p>
+<section id="contrôle-de-qualité-avec-fastq" class="level3" data-number="1.2">
+<h3 data-number="1.2" class="anchored" data-anchor-id="contrôle-de-qualité-avec-fastq"><span class="header-section-number">1.2</span> Contrôle de qualité avec FASTQ</h3>
+<p>Ouvrez la boîte à outils Contrôle de qualité FASTQ (panneau gauche) et choisissez FastQC.</p>
 <p>FastQC</p>
-<p>Explore the quality of reads with FastQC (default settings). See the FastQC website for help and examples of analysis.</p>
-<p>Per Base Sequence Quality: How long are the reads? How does the quality evolve along the reads? Per sequence quality scores: What can be deduced from this graph? Per base sequence content: In the case of genome sequencing (without specific amplification), what should this graph look like? Is the result obtained normal in our case? Adapter content: Which adapter is detected?</p>
+<p>Explorez la qualité des lectures avec FastQC (paramètres par défaut). Consultez le site Web de FastQC pour obtenir de l’aide et des exemples d’analyse.</p>
+<p>Qualité de la séquence par base : Quelle est la longueur des lectures ? Comment la qualité évolue-t-elle le long des lectures ? Scores de qualité par séquence : Que peut-on déduire de ce graphique ? Contenu de séquence par base : Dans le cas du séquençage du génome (sans amplification spécifique), à quoi devrait ressembler ce graphique ? Le résultat obtenu est-il normal dans notre cas ? Contenu des adaptateurs : Quel adaptateur est détecté ?</p>
 </section>
-<section id="read-processing-using-trimmomatic" class="level3" data-number="1.3">
-<h3 data-number="1.3" class="anchored" data-anchor-id="read-processing-using-trimmomatic"><span class="header-section-number">1.3</span> Read processing using Trimmomatic</h3>
-<p>1.Use Trimmomatic (FASTQ Quality control section) to improve the quality of reads:</p>
-<p>Perform initial IllUMINACLIP step? Yes, select Nextera Sliding window trimming (proposed by default) Drop reads below a specific length (MINLEN): 20 2. Perform FastQC analysis again on the processed reads and compare the results to the raw data. Is the result acceptable?</p>
-<ol start="3" type="1">
-<li>What would be the next step to identify the microbial species present in the snake’s oral cavity from these reads?</li>
+<section id="traitement-des-lectures-avec-trimmomatic" class="level3" data-number="1.3">
+<h3 data-number="1.3" class="anchored" data-anchor-id="traitement-des-lectures-avec-trimmomatic"><span class="header-section-number">1.3</span> Traitement des lectures avec Trimmomatic</h3>
+<ol type="1">
+<li>Utilisez Trimmomatic (section Contrôle de qualité FASTQ) pour améliorer la qualité des lectures :</li>
 </ol>
-</section>
-</section>
-<section id="pacbio-hifi" class="level2" data-number="2">
-<h2 data-number="2" class="anchored" data-anchor-id="pacbio-hifi"><span class="header-section-number">2</span> PacBio Hifi</h2>
-<p>This dataset contains 50,000 PacBio HiFi reads from the sequencing of a human genome (PacBio - GIAB sample HG002).</p>
-<section id="import-the-file-into-galaxy" class="level3" data-number="2.1">
-<h3 data-number="2.1" class="anchored" data-anchor-id="import-the-file-into-galaxy"><span class="header-section-number">2.1</span> Import the file into Galaxy:</h3>
-<p>https://zenodo.org/api/files/ff9aa6e3-3d69-451f-9798-7ea69b475989/m64011_190830_220126.Q20.subsample.fastq.gz</p>
-<ol start="2" type="1">
-<li>Perform quality control with Nanoplot (available in Nanopore). This tool can only be used for long reads (PacBio or Nanopore):</li>
-</ol>
-<p>Options for customizing the plot created: Specify the bivariate format of the plots: dot Show the N50 mark in the read length histogram: Yes</p>
-</section>
-<section id="analysis" class="level3" data-number="2.2">
-<h3 data-number="2.2" class="anchored" data-anchor-id="analysis"><span class="header-section-number">2.2</span> Analysis:</h3>
-<p>What is the average length of reads? Significant variations in read size are observed in the PacBio data, unlike the Illumina data. Why? What does N5O represent in this case? How useful can the Yield by length chart be? Read length vs Average read qualiy plot using dots: No read is observed with Q&lt;20. Why? Is there a link between read size and quality?</p>
-</section>
-</section>
-<section id="nanopore" class="level2" data-number="3">
-<h2 data-number="3" class="anchored" data-anchor-id="nanopore"><span class="header-section-number">3</span> NanoPore</h2>
-<p>The last set corresponds to nanopore reads obtained from a plant genome. We will use PycoQC for quality control. This only works with Nanopores readings; it requires specific information provided by nanopore basecallers such as Guppy.</p>
-<section id="import-the-files-into-galaxy" class="level3" data-number="3.1">
-<h3 data-number="3.1" class="anchored" data-anchor-id="import-the-files-into-galaxy"><span class="header-section-number">3.1</span> Import the files into Galaxy:</h3>
-<p>https://zenodo.org/api/files/ff9aa6e3-3d69-451f-9798-7ea69b475989/nanopore_basecalled-guppy.fastq.gz https://zenodo.org/api/files/ff9aa6e3-3d69-451f-9798-7ea69b475989/sequencing_summary.txt</p>
-</section>
-<section id="perform-quality-control-with-pycoqc" class="level3" data-number="3.2">
-<h3 data-number="3.2" class="anchored" data-anchor-id="perform-quality-control-with-pycoqc"><span class="header-section-number">3.2</span> Perform quality control with PycoQC</h3>
-<p>How many reads are available? How many bases does this represent? How do you explain the discrepancy between median reading size and N50? Basecalled reads length: what can you say about the distribution of lengths? Basecalled reads quality: What range do most quality scores fall into?</p>
+<p>Effectuer l’étape IllUMINACLIP initiale ? Oui, sélectionnez Nextera Élagage par fenêtre glissante (proposé par défaut) Supprimer les lectures sous une longueur spécifique (MINLEN) : 20</p>
 
 
 </section>
@@ -935,7 +896,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       &nbsp;
     </div>   
     <div class="nav-footer-center">
-<p>Copyright 2024, Dorine MERLAT. Built with Quarto.</p>
+<p>Copyright 2024, Dorine merlat. Built with Quarto.</p>
 </div>
     <div class="nav-footer-right">
       &nbsp;
