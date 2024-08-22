@@ -2,7 +2,7 @@
 title: "TD de Bioinformatique ESBS"
 ---
 
-# Bienvenue aux Sessions Pratiques de Bioinformatique ESBS
+# Bienvenue aux TD de Bioinformatique ESBS
 
 Vous trouverez ici tout le matériel nécessaire pour vos travaux dirigés (TD) de Bioinformatique à l'ESBS.
 
@@ -20,7 +20,7 @@ Voici les tutoriels pour les étudiants de première année. Ils couvrent les co
 - **[5 - Alignement multiple et phylogénie moléculaire](tutorials-1A/tutorial5.qmd)**
 
 ### 2A - Génomique et Épigénomique (2ème Année)
-Les TD de **Génomique et Épigénomique** s'adresse aux étudiants de 2ème année. Ils vous guideront à travers plusieurs analyses très utilisés en génomique:
+Les TD de Génomique et Épigénomique s'adresse aux étudiants de 2ème année. Ils vous guideront à travers plusieurs analyses très utilisés en génomique:
 
 - **[1 - Pré-traitement des lectures de séquences](tutorials-2A/tutorial1.qmd)**
 - **[2 - Alignement des lectures sur un génome de référence](tutorials-2A/tutorial2.qmd)**
@@ -44,6 +44,10 @@ Ces TD adressés aux 5ème année en pharmacie introduisent certains des outils 
 - **[4 - Recherches de similarité](tutorials-pharma/tutorial4.qmd)**
 - **[5 - Alignement multiple](tutorials-pharma/tutorial5.qmd)**
 
-## Aide et Support
+## Help and Support
 
-Si vous avez besoin de conseils supplémentaires, visitez la section **Aide** où vous trouverez des ressources supplémentaires concernant le **[site Galaxy](help/galaxy.qmd)** et l'utilisation de la **[ligne de commande (CLI)](help/cli.qmd)**, ainsi que des liens vers des resources externes.
+If you need additional guidance, visit the **Help** section where you will find extra resources on the **[Galaxy platform](help/galaxy.qmd)** and using the **[command line interface (CLI)](help/cli.qmd)**, as well as links to external resources.
+
+For any questions, please feel free to contact us:
+- Odile Lecompte: odile.lecompte@unistra.fr
+- Dorine Merlat: dorine.merlat@etu.unistra.fr

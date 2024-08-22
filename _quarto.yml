@@ -77,7 +77,7 @@ website:
     type: textbox
     keyboard-shortcut: ["?", "H"]
     copy-button: true
-  page-footer: "Copyright 2024, Dorine MERLAT. Built with Quarto." 
+  page-footer: "Copyright 2024, Dorine merlat. Built with Quarto." 
 
 language: 
   search-box-placeholder: Search
